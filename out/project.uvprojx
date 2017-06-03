@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\hard</IncludePath>
+              <IncludePath>..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\hard;..\src\user;..\src\hard;..\src\hard;..\src\hard;..\src\hard</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -384,6 +384,11 @@
               <FileType>1</FileType>
               <FilePath>..\src\user\main.c</FilePath>
             </File>
+            <File>
+              <FileName>temperature.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\user\temperature.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -408,6 +413,36 @@
               <FileName>uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\src\hard\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>KEY.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\KEY.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>24c02.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\24c02.c</FilePath>
+            </File>
+            <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>beep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\beep.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hard\ui.c</FilePath>
             </File>
           </Files>
         </Group>
