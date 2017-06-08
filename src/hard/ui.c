@@ -7,13 +7,14 @@
 #include "oled.h"
 #include "ui.h"
 #include "24c02.h"
+#include "BEEP.H"
 #include "uart.h"
 extern int  	key_value  ;
-extern  float low_temp ;
-extern  float high_temp ;
+extern  uint32_t low_temp ;
+extern  uint32_t high_temp ;
 extern  uint32_t  k,t;
-extern	int   lastlow_temp ;
-extern	int   lasthigh_temp ; 
+extern	uint32_t   lastlow_temp ;
+extern	uint32_t   lasthigh_temp ; 
 
 uint8_t Arrow = 2,	chonum, scrnum = 0;
 
@@ -118,18 +119,26 @@ uint8_t  UI(void)
 
 			case 11:UART_send("N_temp:",8);
 							OLED_Print(5, 0, "now temp:");
+			        OLED_Print(5, 3, "now Frh" );
+			        
 			        while(key_value != 9)
 							{
 								temp();
 								OLED_PrintNum(20,2,t%1000/100);
+								
 								OLED_PrintNum(30,2,t%100/10);
+								
 								OLED_P6x8Str(37,2,".");
+								
 								OLED_PrintNum(40,2,t%10/1);
+								
 								OLED_P6x8Str(50,2,"C'");
+								
 								if(key_value == 9)
-								{
-									OLED_CLS();
-								}
+											{
+												OLED_CLS();
+											}
+									
 								
 							
 								

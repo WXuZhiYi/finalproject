@@ -12,7 +12,8 @@
 .\objects\ui.o: ..\src\hard\delay.h
 .\objects\ui.o: ..\src\user\temperature.h
 .\objects\ui.o: ..\src\hard\oled.h
+.\objects\ui.o: ..\src\hard\i2c.h
 .\objects\ui.o: ..\src\hard\ui.h
 .\objects\ui.o: ..\src\hard\24c02.h
-.\objects\ui.o: ..\src\hard\i2c.h
+.\objects\ui.o: ..\src\hard\BEEP.H
 .\objects\ui.o: ..\src\hard\uart.h

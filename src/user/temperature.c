@@ -11,10 +11,10 @@
 #include "temperature.h"
 char GcRcvBuf[20];
 
-  float low_temp = 0;
-	float high_temp = 0;
-	int   lastlow_temp = 0;
-	int   lasthigh_temp = 0; 
+  uint32_t low_temp = 0;
+	uint32_t high_temp = 0;
+	uint32_t   lastlow_temp = 20;
+	uint32_t   lasthigh_temp = 50; 
 	uint32_t   k,t;
 
 	extern int key_value;
@@ -103,24 +103,21 @@ uint8_t temp(void)
 	}
 	sprintf (GcRcvBuf , "temp= %4f\r\n",t);
 	UART_SendStr(GcRcvBuf );
-	
-  if(t<low_temp||t>high_temp)
-	{
-		BEEP_ON();
-		if(key_value== 9)
+	if((t<(low_temp*10))||(t>(high_temp*10)))
 		{
+			BEEP_ON();
+			delay(50);
 			BEEP_OFF();
-		
 		}
+  
 	
-	}
 
 	return t;
 }
 
 void lowtemp_setting(void)
 {
-	if(lastlow_temp <=(-30))lastlow_temp = -30;
+	if(lastlow_temp <=(0))lastlow_temp =0;
 	
 	low_temp = AT24C02_ReadOneByte(0x01);
 	OLED_Print(5,0,"lowtemp_setting:");
@@ -145,7 +142,7 @@ void lowtemp_setting(void)
 void hightemp_setting(void)
 {
 	
-	if(lasthigh_temp >=100)lasthigh_temp = 100;
+	if(lasthigh_temp >=99)lasthigh_temp = 99;
 	high_temp = AT24C02_ReadOneByte(0x02);
 	OLED_Print(5,0,"hightemp_setting:");
 	OLED_Print(5,2,"now :");

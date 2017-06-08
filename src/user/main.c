@@ -14,6 +14,8 @@ extern  float low_temp ;
 extern 	float high_temp ;
 extern 	int   lastlow_temp ;
 extern 	int   lasthigh_temp ; 
+
+extern uint8_t blocklogo[];
 	
 
 
@@ -47,7 +49,7 @@ int main()
 	high_temp= AT24C02_ReadOneByte(0x02);
 	while(1)
 	{
-	   
+	  //Draw_BMP(0,0,127,7, blocklogo);
 		UI();
 	}
 	
